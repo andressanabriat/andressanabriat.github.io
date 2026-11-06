@@ -197,8 +197,21 @@ const nodePositions = [
   let activePointer = null;
   let dragOrigin = null;
   let didDrag = false;
+  // Canvas width at the start of a drag; touch sensitivity is normalized
+  // against it so the feel matches desktop regardless of screen size.
+  let dragCanvasWidth = 0;
   let targetRotationX = -0.12;
   let targetRotationY = 0.2;
+  // Drag sensitivity (rotation gain per CSS pixel), commented per Andrés:
+  // - mouse keeps the historical 0.012 so desktop feels exactly as before;
+  // - touch is scaled up because narrow mobile canvases cover fewer CSS
+  //   pixels per swipe than the ~480px desktop hero canvas (measured at
+  //   1440x900), which made dragging feel slow. A full-width swipe now
+  //   rotates like a desktop full drag; capped so very narrow screens
+  //   never snap.
+  const DRAG_SENSITIVITY = 0.012;
+  const TOUCH_REFERENCE_WIDTH = 480;
+  const TOUCH_SENSITIVITY_CAP = 1.7;
 
   function selectNode(nodeIndex) {
     // Updates the caption under the canvas and notifies script.js (which
@@ -239,12 +252,15 @@ const nodePositions = [
     activePointer = event.pointerId;
     dragOrigin = { x: event.clientX, y: event.clientY };
     didDrag = false;
+    dragCanvasWidth = canvas.getBoundingClientRect().width || TOUCH_REFERENCE_WIDTH;
     canvas.setPointerCapture(event.pointerId);
   }
 
   /**
    * Rotates only when a drag is confirmed (movement > 5px), so plain
-   * clicks keep selecting nodes instead of wobbling the scene.
+   * clicks keep selecting nodes instead of wobbling the scene. Mouse
+   * keeps the historical sensitivity; touch/pen get the width-normalized
+   * gain described by the constants above.
    */
   function onPointerMove(event) {
     if (activePointer === event.pointerId && dragOrigin) {
@@ -252,8 +268,12 @@ const nodePositions = [
       const deltaY = event.clientY - dragOrigin.y;
       if (Math.abs(deltaX) + Math.abs(deltaY) > 5) didDrag = true;
       if (didDrag) {
-        targetRotationY += deltaX * 0.012;
-        targetRotationX += deltaY * 0.012;
+        const isTouch = event.pointerType === "touch" || event.pointerType === "pen";
+        const touchScale = isTouch
+          ? Math.min(TOUCH_SENSITIVITY_CAP, Math.max(1, TOUCH_REFERENCE_WIDTH / dragCanvasWidth))
+          : 1;
+        targetRotationY += deltaX * DRAG_SENSITIVITY * touchScale;
+        targetRotationX += deltaY * DRAG_SENSITIVITY * touchScale;
         dragOrigin = { x: event.clientX, y: event.clientY };
       }
       return;

@@ -159,8 +159,26 @@ a {
   background: var(--light);
 }
 
-.button span:last-child, .text-link span:last-child, .email-link span {
+.button span:last-child {
   margin-left: 14px;
+}
+
+/* Diagonal link arrows use inline SVG instead of the ↗ glyph: on Android
+   that glyph renders as an emoji. currentColor keeps the hover behavior. */
+.link-arrow {
+  display: inline-block;
+  width: .73em;
+  height: .73em;
+  margin-left: 14px;
+  stroke: currentColor;
+  vertical-align: -.08em;
+}
+
+/* The hero "Let's talk" arrow reads as decorative, so it gets a slightly
+   larger box than the one beside the email address. */
+.text-link .link-arrow {
+  width: 1em;
+  height: 1em;
 }
 
 .text-link {
@@ -800,6 +818,96 @@ a {
   object-fit: contain;
 }
 
+/* ===== Gallery dialog (mobile lightbox) ===== */
+/* script.js only opens this dialog on touch/narrow screens; the rules
+   below are inert on desktop by construction. */
+
+.gallery-dialog {
+  position: fixed;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  /* Top band keeps the 36px close button (12..48) off portrait photos;
+     bottom band keeps the counter strip off the screenshot. Landscape
+     screenshots are letterboxed anyway, so the bands cost them nothing. */
+  padding: 54px 12px 46px;
+  border: 0;
+  background: #04101c;
+  color: var(--light);
+}
+
+.gallery-dialog::backdrop {
+  background: rgba(0, 0, 0, .92);
+  backdrop-filter: blur(6px);
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* Horizontal swipes are the gallery gesture; the browser keeps
+     vertical panning so accidental gestures behave naturally. */
+  touch-action: pan-y;
+}
+
+/* The close button reuses .project-dialog-close (36px, top/right 12px).
+   It blends into the gallery the way it does in the other dialogs: same
+   fill as this dialog's background, white glyph, electric blue on
+   hover/press (the :active state covers touch taps without hover). */
+.gallery-dialog .gallery-close {
+  border-color: #04101c;
+  background: #04101c;
+}
+
+.gallery-dialog .gallery-close:hover,
+.gallery-dialog .gallery-close:active {
+  border-color: #04101c;
+  color: var(--cyan);
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--light);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.gallery-arrow:hover {
+  color: var(--cyan);
+}
+
+.gallery-previous {
+  left: 0;
+}
+
+.gallery-next {
+  right: 0;
+}
+
+.gallery-counter {
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  color: var(--slate-on-blue);
+  font: 600 .85rem "Inter", sans-serif;
+  text-align: center;
+  pointer-events: none;
+}
+
 /* ===== Contact & footer ===== */
 
 .contact-section {
@@ -1058,6 +1166,33 @@ a {
   color: #000;
 }
 
+/* ===== Scrollbar ===== */
+/* WebKit/Chromium only (Chrome, Edge, other Chromium browsers): thin
+   rounded thumb in the site palette over a black track. Firefox keeps
+   its native scrollbar (no scrollbar-color/width rules on purpose);
+   mobile Chromium uses overlay scrollbars, so this is desktop-only. */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--slate);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyan);
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+
 /* ===== Accessibility & responsive ===== */
 
 :focus-visible {
@@ -1267,6 +1402,13 @@ a {
 
   .project-dialog-content {
     padding: 18px;
+  }
+
+  /* Landscape-slide dialogs (projects 02/03) start their screenshots below
+     the 48px close-button zone; the portrait dialog (project 01) is left
+     untouched by design. */
+  .project-dialog:not(.project-dialog--portrait) .project-dialog-content {
+    padding-top: 54px;
   }
 
   .project-dialog--portrait .project-dialog-content {

@@ -46,17 +46,19 @@ const translations = {
     'projects.label': '02 / Proyectos', 'projects.title': 'Trabajo <span>seleccionado</span>', 'projects.placeholderTitle': 'Proyecto en preparación', 'projects.placeholderText': 'Próximamente · Caso de estudio', 'projects.placeholderStatus': 'Contenido pendiente',
     'project.openLabel1': 'Abrir información del proyecto 01', 'project.openLabel2': 'Abrir información del proyecto 02', 'project.openLabel3': 'Abrir información del proyecto 03', 'project.closeLabel': 'Cerrar ventana', 'project.carouselLabel': 'Capturas del proyecto',
     'project.previousLabel': 'Captura anterior', 'project.nextLabel': 'Captura siguiente', 'project.goToScreenshot1': 'Ir a la captura 1', 'project.goToScreenshot2': 'Ir a la captura 2', 'project.goToScreenshot3': 'Ir a la captura 3',
+
+    'gallery.dialogLabel': 'Galería de capturas', 'gallery.closeLabel': 'Cerrar galería',
     'project.descriptionTitle': 'Descripción del proyecto', 'project.descriptionPlaceholder': 'Aquí irá la descripción del proyecto.',
-    'projectOne.description': 'Dynamic Users es una aplicación móvil desarrollada con Dart para usuarios de gimnasios. Permite consultar las rutinas asignadas por su entrenador o crear rutinas propias, hacer seguimiento de su estado físico y consultar cómo realizar ejercicios organizados por grupos musculares. Forma parte del ecosistema Dynamic Centros Deportivos, el sistema de gestión para centros deportivos que presento en el siguiente proyecto.',
-    'projectTwo.description': 'Dynamic Centros Deportivos es una aplicación web desarrollada con React para la gestión de gimnasios. Permite centralizar en una sola plataforma la administración del centro, sus usuarios, rutinas y pagos, ayudando a los administradores a gestionar mejor su centro deportivo. Forma parte del ecosistema Dynamic Users, la aplicación móvil para los usuarios de los centros deportivos.',
+    'projectOne.description': 'Dynamic Users es una aplicación móvil desarrollada con Dart para usuarios de gimnasios. Permite consultar las rutinas asignadas por su entrenador o crear rutinas propias, hacer seguimiento de su estado físico y consultar cómo realizar ejercicios organizados por grupos musculares. Forma parte del ecosistema Dynamic Sports Centers, el sistema de gestión para centros deportivos que presento en el siguiente proyecto.',
+    'projectTwo.description': 'Dynamic Sports Centers es una aplicación web desarrollada con React para la gestión de gimnasios. Permite centralizar en una sola plataforma la administración del centro, sus usuarios, rutinas y pagos, ayudando a los administradores a gestionar mejor su centro deportivo. Forma parte del ecosistema Dynamic Users, la aplicación móvil para los usuarios de los centros deportivos.',
     'projectThree.description': 'HelpDesk diseñado para la Clínica Sagrada Familia. Permite reportar incidencias mediante tickets dirigidos al administrador y hacer seguimiento de cada una. El proyecto se presentó a un concurso para ser elegido como sistema de soporte de la clínica, pero no fue seleccionado; por ello, quedó como prototipo y no llegó a conectarse a una base de datos.',
     'project.technologiesTitle': 'Lenguajes y tecnologías', 'project.technologiesPlaceholder': 'Aquí irán los iconos de los lenguajes', 'project.coverAlt': 'Portada de Dynamic Health, Sport & Motivation en versión móvil', 'project.loginAlt': 'Pantalla de bienvenida de Dynamic App en móvil',
-    'projectOne.title': 'Dynamic Users', 'projectOne.subtitle': 'Entrenamientos, estado físico y ejercicios.', 'projectTwo.title': 'Dynamic Centros Deportivos', 'projectTwo.subtitle': 'Gestión de usuarios, rutinas y pagos.', 'projectThree.title': 'HelpDesk Clínica Sagrada Familia', 'projectThree.subtitle': 'Tickets, incidencias y soluciones.',
+    'projectOne.title': 'Dynamic Users', 'projectOne.subtitle': 'Entrenamientos, estado físico y ejercicios.', 'projectTwo.title': 'Dynamic Sports Centers', 'projectTwo.subtitle': 'Gestión de usuarios, rutinas y pagos.', 'projectThree.title': 'HelpDesk Clínica Sagrada Familia', 'projectThree.subtitle': 'Tickets, incidencias y soluciones.',
     'services.label': '03 / Lo que hago', 'services.devTitle': 'Desarrollo de software', 'services.devText': 'Aplicaciones y soluciones construidas desde una base sólida.', 'services.designTitle': 'Diseño de interfaces', 'services.designText': 'Experiencias digitales claras, accesibles y fáciles de usar.', 'services.productTitle': 'Productos digitales', 'services.productText': 'Ideas transformadas en propuestas útiles y coherentes.',
     'services.techTitle': 'Lenguajes, frameworks<br><span>& tecnologías</span>', 'services.techBeltLabel': 'Lenguajes y tecnologías que manejo',
     'contact.label': '04 / Contacto', 'contact.title': '¿Tienes una idea?<br><em>Hablemos</em>', 'contact.linkedin': 'LinkedIn', 'contact.github': 'GitHub', 'contact.githubPending': 'Enlace pendiente', 'contact.cv': 'CV', 'contact.cvPending': 'Próximamente',
     'cv.openLabel': 'Abrir CV (currículum)', 'cv.title': 'Curriculum Vitae', 'cv.previewTitle': 'Vista previa del currículum', 'cv.download': 'Descargar CV',
-    'cv.toolbarLabel': 'Herramientas del documento', 'cv.zoomControlsLabel': 'Controles de zoom', 'cv.zoomOut': 'Alejar', 'cv.zoomIn': 'Acercar', 'cv.fitPage': 'Ajustar página', 'cv.rotateLeft': 'Girar a la izquierda', 'cv.drive': 'Abrir Google Drive para subir el CV', 'cv.print': 'Imprimir', 'contact.emailLabel': 'Redactar correo a andresesanabria9@gmail.com en Gmail'
+    'cv.toolbarLabel': 'Herramientas del documento', 'cv.zoomControlsLabel': 'Controles de zoom', 'cv.zoomOut': 'Alejar', 'cv.zoomIn': 'Acercar', 'cv.fitPage': 'Ajustar página', 'cv.rotateLeft': 'Girar a la izquierda', 'cv.print': 'Imprimir', 'contact.emailLabel': 'Redactar correo a andresesanabria9@gmail.com en Gmail'
   },
   en: {
     'nav.about': 'About me', 'nav.projects': 'Projects', 'nav.services': 'What I do', 'nav.contact': 'Contact', 'nav.backToTop': 'Back to top', 'nav.mainLabel': 'Main navigation', 'nav.languageSelector': 'Language selector', 'nav.openMenu': 'Open menu', 'nav.closeMenu': 'Close menu',
@@ -71,17 +73,19 @@ const translations = {
     'projects.label': '02 / Projects', 'projects.title': '<span>Selected</span> work', 'projects.placeholderTitle': 'Project in progress', 'projects.placeholderText': 'Coming soon · Case study', 'projects.placeholderStatus': 'Content pending',
     'project.openLabel1': 'Open project 01 details', 'project.openLabel2': 'Open project 02 details', 'project.openLabel3': 'Open project 03 details', 'project.closeLabel': 'Close window', 'project.carouselLabel': 'Project screenshots',
     'project.previousLabel': 'Previous screenshot', 'project.nextLabel': 'Next screenshot', 'project.goToScreenshot1': 'Go to screenshot 1', 'project.goToScreenshot2': 'Go to screenshot 2', 'project.goToScreenshot3': 'Go to screenshot 3',
+
+    'gallery.dialogLabel': 'Screenshot gallery', 'gallery.closeLabel': 'Close gallery',
     'project.descriptionTitle': 'Project description', 'project.descriptionPlaceholder': 'Project description goes here.',
-    'projectOne.description': 'Dynamic Users is a mobile application developed with Dart for gym members. It lets users view routines assigned by their trainer or create their own, track their physical condition, and learn how to perform exercises organized by muscle group. It is part of the Dynamic Centros Deportivos ecosystem, the sports-center management system featured in the next project.',
-    'projectTwo.description': 'Dynamic Centros Deportivos is a web application developed with React for gym management. It centralizes the administration of the center, its users, routines, and payments in one platform, helping administrators manage their sports center more effectively. It is part of the Dynamic Users ecosystem, the mobile app for sports-center members.',
+    'projectOne.description': 'Dynamic Users is a mobile application developed with Dart for gym members. It lets users view routines assigned by their trainer or create their own, track their physical condition, and learn how to perform exercises organized by muscle group. It is part of the Dynamic Sports Centers ecosystem, the sports-center management system featured in the next project.',
+    'projectTwo.description': 'Dynamic Sports Centers is a web application developed with React for gym management. It centralizes the administration of the center, its users, routines, and payments in one platform, helping administrators manage their sports center more effectively. It is part of the Dynamic Users ecosystem, the mobile app for sports-center members.',
     'projectThree.description': 'HelpDesk designed for Clínica Sagrada Familia. It lets users report issues through tickets sent to the administrator and track each issue. The project was submitted to a competition to be selected as the clinic’s support system, but it was not selected; therefore, it remained a prototype and was never connected to a database.',
     'project.technologiesTitle': 'Languages and technologies', 'project.technologiesPlaceholder': 'Language icons go here', 'project.coverAlt': 'Cover image for Dynamic Health, Sport & Motivation mobile app', 'project.loginAlt': 'Dynamic App mobile welcome screen',
-    'projectOne.title': 'Dynamic Users', 'projectOne.subtitle': 'Training, fitness and exercises.', 'projectTwo.title': 'Dynamic Centros Deportivos', 'projectTwo.subtitle': 'User, routine and payment management.', 'projectThree.title': 'HelpDesk Clínica Sagrada Familia', 'projectThree.subtitle': 'Tickets, issues and solutions.',
+    'projectOne.title': 'Dynamic Users', 'projectOne.subtitle': 'Training, fitness and exercises.', 'projectTwo.title': 'Dynamic Sports Centers', 'projectTwo.subtitle': 'User, routine and payment management.', 'projectThree.title': 'HelpDesk Clínica Sagrada Familia', 'projectThree.subtitle': 'Tickets, issues and solutions.',
     'services.label': '03 / What I do', 'services.devTitle': 'Software development', 'services.devText': 'Applications and solutions built on a solid foundation.', 'services.designTitle': 'Interface design', 'services.designText': 'Clear, accessible and easy-to-use digital experiences.', 'services.productTitle': 'Digital products', 'services.productText': 'Ideas shaped into useful and coherent proposals.',
     'services.techTitle': 'Languages, frameworks<br><span>& technologies</span>', 'services.techBeltLabel': 'Languages and technologies I use',
     'contact.label': '04 / Contact', 'contact.title': 'Have an idea?<br><em>Let’s talk</em>', 'contact.linkedin': 'LinkedIn', 'contact.github': 'GitHub', 'contact.githubPending': 'Link pending', 'contact.cv': 'CV', 'contact.cvPending': 'Coming soon',
     'cv.openLabel': 'Open CV (résumé)', 'cv.title': 'Curriculum Vitae', 'cv.previewTitle': 'Résumé preview', 'cv.download': 'Download résumé',
-    'cv.toolbarLabel': 'Document tools', 'cv.zoomControlsLabel': 'Zoom controls', 'cv.zoomOut': 'Zoom out', 'cv.zoomIn': 'Zoom in', 'cv.fitPage': 'Fit page', 'cv.rotateLeft': 'Rotate left', 'cv.drive': 'Open Google Drive to upload résumé', 'cv.print': 'Print', 'contact.emailLabel': 'Compose email to andresesanabria9@gmail.com in Gmail'
+    'cv.toolbarLabel': 'Document tools', 'cv.zoomControlsLabel': 'Zoom controls', 'cv.zoomOut': 'Zoom out', 'cv.zoomIn': 'Zoom in', 'cv.fitPage': 'Fit page', 'cv.rotateLeft': 'Rotate left', 'cv.print': 'Print', 'contact.emailLabel': 'Compose email to andresesanabria9@gmail.com in Gmail'
   }
 };
 
@@ -352,6 +356,15 @@ let activeProjectSlides = [];
 let carouselDots = [];
 let activeProjectSlide = 0;
 let carouselPointerStart = null;
+// Timestamp of the last swipe-driven slide change; a click arriving just
+// after a swipe must not open the gallery (the tap ends in a click).
+let lastCarouselSwipeAt = 0;
+// Project names are shared by the carousel alt text and the gallery.
+const projectNamesById = {
+  1: 'Dynamic Users',
+  2: 'Dynamic Sports Centers',
+  3: 'HelpDesk Clínica Sagrada Familia'
+};
 
 /**
  * Writes localized alt text for each screenshot slide, translating
@@ -361,12 +374,7 @@ let carouselPointerStart = null;
 function updateScreenshotAlt(language) {
   projectScreenshotSlides.forEach((slide) => {
     const number = slide.dataset.screenshotNumber;
-    const projectNames = {
-      1: 'Dynamic Users',
-      2: 'Dynamic Centros Deportivos',
-      3: 'HelpDesk Clínica Sagrada Familia'
-    };
-    const projectName = projectNames[slide.dataset.projectScreenshot];
+    const projectName = projectNamesById[slide.dataset.projectScreenshot];
     const image = slide.querySelector('img');
     if (!image) return;
     image.alt = language === 'en' ? `Screenshot ${number} of ${projectName}` : `Captura ${number} de ${projectName}`;
@@ -466,12 +474,135 @@ projectDialog.querySelector('.project-carousel').addEventListener('pointerdown',
 projectDialog.querySelector('.project-carousel').addEventListener('pointerup', (event) => {
   if (carouselPointerStart === null) return;
   const swipeDistance = event.clientX - carouselPointerStart;
-  if (Math.abs(swipeDistance) > 45) showProjectSlide(activeProjectSlide + (swipeDistance < 0 ? 1 : -1));
+  if (Math.abs(swipeDistance) > 45) {
+    showProjectSlide(activeProjectSlide + (swipeDistance < 0 ? 1 : -1));
+    lastCarouselSwipeAt = Date.now();
+  }
   carouselPointerStart = null;
 });
 projectDialog.querySelector('.project-carousel').addEventListener('pointercancel', () => {
   carouselPointerStart = null;
 });
+
+// ── Mobile screenshot gallery (lightbox) ───────────────────────────────────
+// Tapping a carousel slide opens the screenshot full-size. The trigger is
+// restricted to touch/narrow screens so desktop behaviour stays untouched.
+
+const galleryDialog = document.querySelector('#gallery-dialog');
+const galleryImage = galleryDialog.querySelector('.gallery-image');
+const galleryCounter = galleryDialog.querySelector('.gallery-counter');
+let gallerySlides = [];
+let galleryIndex = 0;
+// `galleryPointerOrigin` keeps the first X of the gesture (it never moves)
+// so the release still measures the full swipe distance.
+let galleryPointerOrigin = null;
+let galleryPointerPrevious = 0;
+let galleryPointerMoved = 0;
+// Set after a drag/swipe to swallow the click event browsers fire on release.
+let gallerySwallowNextClick = false;
+
+// Touch devices and narrow viewports open the gallery; desktop never does.
+function galleryIsEligible() {
+  return window.matchMedia('(max-width: 700px), (pointer: coarse)').matches;
+}
+
+/**
+ * Mirrors the screenshot onto the lightbox (src + localized alt) and
+ * refreshes the "N / total" counter with its accessible label.
+ */
+function updateGalleryView() {
+  const slide = gallerySlides[galleryIndex];
+  const image = slide.querySelector('img');
+  const language = document.documentElement.lang === 'en' ? 'en' : 'es';
+  const number = slide.dataset.screenshotNumber;
+  const projectName = projectNamesById[slide.dataset.projectScreenshot];
+  galleryImage.src = image.src;
+  galleryImage.alt = language === 'en' ? `Screenshot ${number} of ${projectName}` : `Captura ${number} de ${projectName}`;
+  galleryCounter.textContent = `${galleryIndex + 1} / ${gallerySlides.length}`;
+  galleryCounter.setAttribute('aria-label', language === 'en'
+    ? `Screenshot ${galleryIndex + 1} of ${gallerySlides.length}`
+    : `Captura ${galleryIndex + 1} de ${gallerySlides.length}`);
+}
+
+/**
+ * Moves the gallery index cyclically and repaints the lightbox.
+ */
+function showGallerySlide(step) {
+  galleryIndex = (galleryIndex + step + gallerySlides.length) % gallerySlides.length;
+  updateGalleryView();
+}
+
+// One tap listener drives everything: arrows navigate, any other tap
+// (image, letterboxing, margins) closes — the standard lightbox gesture.
+galleryDialog.addEventListener('click', (event) => {
+  if (gallerySwallowNextClick) {
+    gallerySwallowNextClick = false;
+    return;
+  }
+  const stepButton = event.target.closest('[data-gallery-step]');
+  if (stepButton) {
+    showGallerySlide(Number(stepButton.dataset.galleryStep));
+    return;
+  }
+  if (event.target.closest('.gallery-close')) {
+    galleryDialog.close();
+    return;
+  }
+  galleryDialog.close();
+});
+
+// Horizontal swipe: same 45px threshold as the carousel. Drags over 12px
+// swallow the trailing click so a swipe never opens/closes by accident.
+galleryDialog.addEventListener('pointerdown', (event) => {
+  if (event.pointerType === 'touch') {
+    galleryPointerOrigin = event.clientX;
+    galleryPointerPrevious = event.clientX;
+    galleryPointerMoved = 0;
+  }
+});
+galleryDialog.addEventListener('pointermove', (event) => {
+  if (galleryPointerOrigin === null) return;
+  galleryPointerMoved += Math.abs(event.clientX - galleryPointerPrevious);
+  galleryPointerPrevious = event.clientX;
+});
+galleryDialog.addEventListener('pointerup', (event) => {
+  if (galleryPointerOrigin === null) return;
+  const swipeDistance = event.clientX - galleryPointerOrigin;
+  if (galleryPointerMoved > 12) gallerySwallowNextClick = true;
+  if (Math.abs(swipeDistance) > 45) showGallerySlide(swipeDistance < 0 ? 1 : -1);
+  galleryPointerOrigin = null;
+});
+galleryDialog.addEventListener('pointercancel', () => {
+  galleryPointerOrigin = null;
+});
+
+// Keyboard parity for the lightbox while it is open.
+galleryDialog.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowLeft') showGallerySlide(-1);
+  if (event.key === 'ArrowRight') showGallerySlide(1);
+});
+
+// Opening trigger: a click on any screenshot slide inside the project
+// dialog. A click fired right after a swipe belongs to that swipe.
+projectDialog.querySelector('.project-carousel-slides').addEventListener('click', (event) => {
+  if (!galleryIsEligible()) return;
+  const slide = event.target.closest('[data-project-screenshot]');
+  if (!slide) return;
+  if (Date.now() - lastCarouselSwipeAt < 350) return;
+  const clickedImage = slide.querySelector('img');
+  if (!clickedImage) return;
+  const projectId = slide.dataset.projectScreenshot;
+  gallerySlides = projectScreenshotSlides.filter((candidate) => candidate.dataset.projectScreenshot === projectId);
+  galleryIndex = Math.max(0, gallerySlides.indexOf(slide));
+  updateGalleryView();
+  galleryDialog.showModal();
+});
+
+// A language change while the gallery is open must re translate it too.
+document.addEventListener('portfolio-language-change', (event) => {
+  if (galleryDialog.open) updateGalleryView();
+});
+
 
 // ── Résumé (CV) dialog ─────────────────────────────────────────────────────
 // Opening/closing only; rendering lives in pdf-viewer.js.
@@ -480,6 +611,40 @@ cvOpenButton.addEventListener('click', () => cvDialog.showModal());
 cvDialog.querySelector('.cv-dialog-close').addEventListener('click', () => cvDialog.close());
 cvDialog.addEventListener('click', (event) => {
   if (event.target === cvDialog) cvDialog.close();
+});
+
+// ── Contact email: Gmail app first on mobile, web compose as fallback ─────
+// The anchor keeps its original href (web Gmail compose), which desktop
+// browsers follow untouched. On mobile the click is intercepted:
+// - Android launches the Gmail app through an intent:// URL; when the app
+//   is absent, Chrome itself follows S.browser_fallback_url back to the
+//   web compose page, no timers required.
+// - iOS opens the Gmail URL scheme, then a timeout re-checks: if the page
+//   stayed visible (no app came forward), it falls back to the web compose.
+const emailLink = document.querySelector('.email-link');
+const isAndroidDevice = /android/i.test(navigator.userAgent);
+const isIOSDevice = /ipad|iphone|ipod/i.test(navigator.userAgent)
+  || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+emailLink.addEventListener('click', (event) => {
+  if (!isAndroidDevice && !isIOSDevice) return;
+  event.preventDefault();
+  if (isAndroidDevice) {
+    const fallbackUrl = encodeURIComponent(emailLink.href);
+    window.location.href = `intent://andresesanabria9@gmail.com/#Intent;scheme=mailto;action=android.intent.action.SENDTO;package=com.google.android.gm;S.browser_fallback_url=${fallbackUrl};end`;
+    return;
+  }
+  let gmailAppOpened = false;
+  window.addEventListener('pagehide', () => { gmailAppOpened = true; }, { once: true });
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') gmailAppOpened = true;
+  });
+  window.location.href = 'googlegmail://co?to=andresesanabria9@gmail.com';
+  setTimeout(() => {
+    if (!gmailAppOpened && document.visibilityState === 'visible') {
+      window.location.href = emailLink.href;
+    }
+  }, 600);
 });
 
 // ── 3D scene sync: update section labels when a node is picked ────────────

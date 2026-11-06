@@ -3,8 +3,8 @@
  *
  * Renders `Curriculum_Andres_S.pdf` into one canvas per page inside the
  * dialog preview. Toolbar actions (data-cv-action) cover zoom in/out,
- * fit page, rotate left, print (via a temporary iframe) and opening
- * Google Drive; Ctrl + wheel also zooms, but only over the preview.
+ * fit page, rotate left and print (via a temporary iframe); Ctrl +
+ * wheel also zooms, but only over the preview.
  *
  * Scale model: the internal `scaleFactor` runs 0.4–4 where 1 equals
  * "fit page". The displayed percentage remaps that range onto an
@@ -29,6 +29,14 @@ let rotation = 0;
 let renderVersion = 0;
 let renderTasks = [];
 
+// Opening zoom differs per device class: desktop keeps the fixed 157%
+// level, while touch/narrow screens open at "103%" (internal 1.06) so the
+// whole CV is readable without starting larger than the screen. The
+// displayed percentage maps through updateZoomLevel(), not stored here.
+function openingScaleFactor() {
+  return window.matchMedia('(max-width: 700px), (pointer: coarse)').matches ? 1.06 : 2.14;
+}
+
 /**
  * Fetches and caches the PDF once, resets the zoom to the opening
  * level, then renders all pages.
@@ -38,7 +46,7 @@ async function loadDocument() {
   pagesContainer.innerHTML = '<p class="cv-loading">Cargando documento…</p>';
   pdfDocument = await pdfjsLib.getDocument(pdfUrl).promise;
   pdfData = await pdfDocument.getData();
-  scaleFactor = 2.14;
+  scaleFactor = openingScaleFactor();
   updateZoomLevel();
   await renderPages();
   return pdfDocument;
@@ -143,10 +151,11 @@ preview.addEventListener('wheel', (event) => {
   changeZoom(event.deltaY < 0 ? 1.1 : 1 / 1.1).catch(showError);
 }, { passive: false });
 
-// Every opening resets the zoom to the fixed 157% level, whether the
-// document is already cached (re-render) or still loading (loadDocument).
+// Every opening resets the zoom to the opening level (157% desktop,
+// 103% mobile), whether the document is already cached (re-render) or
+// still loading (loadDocument).
 document.querySelector('.cv-open').addEventListener('click', () => {
-  scaleFactor = 2.14;
+  scaleFactor = openingScaleFactor();
   updateZoomLevel();
   const opening = pdfDocument ? renderPages() : loadDocument();
   opening.catch(showError);
@@ -162,16 +171,12 @@ document.addEventListener('portfolio-language-change', (event) => {
   updateZoomLevel();
 });
 
-// Toolbar: Drive opens externally (no upload integration, by design);
-// print streams the cached bytes through a temporary iframe, starting
-// the print dialog once loaded and cleaning up after `afterprint` or a
-// 60s safety timeout; other actions adjust scale/rotation and re-render.
+// Toolbar: print streams the cached bytes through a temporary iframe,
+// starting the print dialog once loaded and cleaning up after
+// `afterprint` or a 60s safety timeout; other actions adjust
+// scale/rotation and re-render.
 toolButtons.forEach((button) => button.addEventListener('click', async () => {
   const action = button.dataset.cvAction;
-  if (action === 'drive') {
-    window.open('https://drive.google.com/drive/my-drive', '_blank', 'noopener,noreferrer');
-    return;
-  }
 
   try {
     await loadDocument();
