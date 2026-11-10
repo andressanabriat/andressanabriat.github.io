@@ -464,6 +464,16 @@ a {
   object-fit: contain;
 }
 
+/* The AI-agents item uses an inline robot-head glyph instead of a brand
+   icon; it keeps the belt sizing while taking the neutral light tone. */
+.tech-belt-item svg.tech-belt-spark {
+  display: block;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  color: var(--light);
+}
+
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

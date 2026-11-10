@@ -206,12 +206,14 @@ const nodePositions = [
   // - mouse keeps the historical 0.012 so desktop feels exactly as before;
   // - touch is scaled up because narrow mobile canvases cover fewer CSS
   //   pixels per swipe than the ~480px desktop hero canvas (measured at
-  //   1440x900), which made dragging feel slow. A full-width swipe now
-  //   rotates like a desktop full drag; capped so very narrow screens
-  //   never snap.
+  //   1440x900), which made dragging feel slow. After a real-device test
+  //   still felt weak, touch/pen gain is multiplied again by
+  //   TOUCH_SENSITIVITY_BOOST (≈2x stronger overall), with TOUCH_SENSITIVITY_MAX
+  //   clamping the final result so very narrow screens never snap.
   const DRAG_SENSITIVITY = 0.012;
   const TOUCH_REFERENCE_WIDTH = 480;
-  const TOUCH_SENSITIVITY_CAP = 1.7;
+  const TOUCH_SENSITIVITY_BOOST = 2.2;
+  const TOUCH_SENSITIVITY_MAX = 3.4;
 
   function selectNode(nodeIndex) {
     // Updates the caption under the canvas and notifies script.js (which
@@ -270,7 +272,7 @@ const nodePositions = [
       if (didDrag) {
         const isTouch = event.pointerType === "touch" || event.pointerType === "pen";
         const touchScale = isTouch
-          ? Math.min(TOUCH_SENSITIVITY_CAP, Math.max(1, TOUCH_REFERENCE_WIDTH / dragCanvasWidth))
+          ? Math.min(TOUCH_SENSITIVITY_MAX, TOUCH_SENSITIVITY_BOOST * Math.max(1, TOUCH_REFERENCE_WIDTH / dragCanvasWidth))
           : 1;
         targetRotationY += deltaX * DRAG_SENSITIVITY * touchScale;
         targetRotationX += deltaY * DRAG_SENSITIVITY * touchScale;
